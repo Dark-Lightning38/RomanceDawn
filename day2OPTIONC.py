@@ -52,6 +52,24 @@ def show_tasks(list_of_tasks):
         for index, task in enumerate(list_of_tasks):
             print(f"Task {index+1}: {task['name']} - Status: {task['status']}")
 
+
+def show_ongoing_tasks (list_of_tasks):
+    
+    i = 0
+    
+    if not list_of_tasks:
+        print("No tasks yet in the list!")
+    else:
+        for index, task in enumerate(list_of_tasks):
+            if task ["status"] == False:
+                print(f"Task {index+1}: {task['name']} is still open")
+            else:
+                i += 1    
+    if i == 0:
+        print("There are no ongoing tasks")
+
+                
+
 def remove_task(list_of_tasks,task_index):
     try:
         task_index = int(input("Which task would you like to remove? "))
@@ -106,7 +124,8 @@ def menu():
     print("2. Show Tasks")
     print("3. Remove Task")
     print("4. Mark Task as Done")
-    print("5. Quit")
+    print("5. Show me ongoing Tasks")
+    print("6. Quit")
 
 tasks = load_tasks()
 while True:
@@ -125,10 +144,12 @@ while True:
             mark_done(tasks)
             save_tasks(tasks)
         elif choice == 5:
+            show_ongoing_tasks(tasks)
+        elif choice == 6:
             print("Ok, See you tomorrow!")
             save_tasks(tasks)
             for index,task in enumerate(tasks):
-                print(f"Task {index+1}: {task['name']}")
+                print(f"Task {index+1}: {task['name']} is {'Completed' if task['status'] else 'Not Completed'}")
             break
         else:
             print("Invalid choice. Please try again.")
