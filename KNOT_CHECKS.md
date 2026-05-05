@@ -11,6 +11,7 @@ Why would a filenotfounderror make sense if anyway the file recreates ? or is it
 
 #Fixing/Resolving all my #WHY in code in day1.py
 commented out the line 115 of day1.py as I created a dic to add that I didn't need in the end as I append manually in line 121. Same for line 142.
+line 120 I read about the tuple/map/split
 
 #Fixing/Resolving all my #WHY in code in day1.py
 line 8 ok I unerstand the formula now, r is read.... logical...
@@ -18,6 +19,12 @@ line 15 ok too if it fails.. but with now lines 10 to 13 it may not be needed to
 line 18  as a file is clear it assigns as a variable in the function. great !!
 line 53 I think I finally understand//// if not (reverses the next argument True/False) list() which if empty is False... sor everse means true and the block of code int he if will execute 
 lines70 to 74 ... fixed the issue I was having and lack of understanding as to why it worked that way. Wrong if/else construction.
+line 78 fixed my #WHY comment
 
 #wrap input calls
 ok so I do now understand the need ...and I've added it. I think it shoudl also be added to other scripts I have not just day1.py though.
+
+#learned
+surprised about the if __name__ == "__main--": method and it makes sense. better... I didn't know about the import method back then. so it suprised em the improtance of it. and that I had amde a mistake in lines 70 to 74 of day2OPTIONC.py as I had really checked - so good all in all.
+learned the open ... as file fixing the file as variabel for Json very interesting. The if not list.Tuple,map & split method I had copied.
+not confident about....rememberign all of that... from scratch end of day 3 will be a lot. and return in function.

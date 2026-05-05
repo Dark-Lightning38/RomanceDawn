@@ -75,7 +75,7 @@ def show_ongoing_tasks (list_of_tasks):
 
                 
 
-def remove_task(list_of_tasks,task_index): #WHY ask for task_index in function if input after that is a msitake corrected in v2 of the function here under.
+def remove_task(list_of_tasks): #WHY ask for task_index in function if input after that is a msitake corrected in v2 of the function here under.
     try:
         task_index = int(input("Which task would you like to remove? "))
         if not list_of_tasks:
