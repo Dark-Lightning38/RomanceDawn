@@ -98,6 +98,7 @@ def update_agent3(agents_list,name,FTE,days_worked,Hours_worked):
 
 update_agent3(agents1,"Simon", 1, [0,1,2,3,4,5],(7,16))
 
+
 def self_add_agent():
     new_self_add_agent = {}
     name_input = input("Hello, Please start by giving me your name: ")
@@ -110,36 +111,35 @@ def self_add_agent():
     print(agents1)
 
 #self_add_agent()
-
 def self_add_agent2():
-    new_self_add_agent = {}
+#    new_self_add_agent = {} #WHY did I create this ? to add into a dic and then add this into list ... instead I did ti manually on line 121
     name_input = str(input("Hello, Please start by giving me your name: "))
     print(f"Hello {name_input}, thank you for joining us!")
     FTE_input = float(input("Please enter your FTE: "))
     days_worked_input = list(input("Please enter the days you worked (monday being 0 and sunday 6 - no space or comma): "))
-    hours_worked_input = tuple(map(int, input("Please enter the range of hours you work each day (e.g., 8,18): ").split(",")))
+    hours_worked_input = tuple(map(int, input("Please enter the range of hours you work each day (e.g., 8,18): ").split(","))) #WHY the split/map/tuple?
     agents1.append({"name": name_input, "FTE": FTE_input, "days-worked": days_worked_input, "Hours-worked": hours_worked_input})
     print(f"Agent added: {name_input}")
     print(agents1)
 
 #self_add_agent2()
 
-try:
-    Number=int(input("please enter a number: "))
-    print(f'The number you entred in correct: {Number}')
-except:
-    print("An error occurred, please enter a valid number")
+# try:
+#     Number=int(input("please enter a number: "))
+#     print(f'The number you entred in correct: {Number}')
+# except:
+#     print("An error occurred, please enter a valid number")
 
-try:
-    Number=int(input("please enter a number: "))
-    print(f'The number you entred in correct: {Number}')
-except ValueError:
-    print("An error occurred, please enter a valid number")
+# try:
+#     Number=int(input("please enter a number: "))
+#     print(f'The number you entred in correct: {Number}')
+# except ValueError:
+#     print("An error occurred, please enter a valid number")
 
 
 def self_add_agent3():
     try:
-        new_self_add_agent = {}
+#        new_self_add_agent = {} #WHY did I create this ? to add into a dic and then add this into list ... instead I did ti manually on line 148
         name_input = str(input("Hello, Please start by giving me your name: "))
         print(f"Hello {name_input}, thank you for joining us!")
         FTE_input = float(input("Please enter your FTE: "))
@@ -151,7 +151,8 @@ def self_add_agent3():
     except ValueError:
         print("An error occurred while adding the agent. Please make sure to enter valid inputs.")
 
-self_add_agent3()
+if __name__ == "__main__":
+    self_add_agent3()
 
 
 

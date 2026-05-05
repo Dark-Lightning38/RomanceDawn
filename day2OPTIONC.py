@@ -5,13 +5,17 @@ import json
 
 def load_tasks():
     try:
-        with open("tasks.json", "r") as file:
+        with open("tasks.json", "r") as file:  #WHY the "r" mode? 
             return json.load(file)
+    except FileNotFoundError:
+            print("No existing tasks file found.")
+    except json.JSONDecodeError:
+        print("Error decoding JSON file.")
     except:
-        return[]
+        return[] #WHY vs except ValueError? or other error types?
 
 def save_tasks(tasks):
-    with open("tasks.json", "w") as file:
+    with open("tasks.json", "w") as file: #WHY as file ?
         json.dump(tasks, file)
 
 
@@ -46,7 +50,7 @@ def add_task(list_of_tasks):
 
 
 def show_tasks(list_of_tasks):
-    if not list_of_tasks:
+    if not list_of_tasks:#WHY this condition? how does it work ?
         print("No tasks yet in the list!")
     else:
         for index, task in enumerate(list_of_tasks):
@@ -63,14 +67,15 @@ def show_ongoing_tasks (list_of_tasks):
         for index, task in enumerate(list_of_tasks):
             if task ["status"] == False:
                 print(f"Task {index+1}: {task['name']} is still open")
-            else:
-                i += 1    
-    if i == 0:
+                i += 1
+#            else:
+#                i += 1  #WHY ? nope issue in code here ... it doesn't do twhat I want it to do i+= 1 should be in if + no else then the if == 0 works for no ongoing tasks.
+    if i == 0: 
         print("There are no ongoing tasks")
 
                 
 
-def remove_task(list_of_tasks,task_index):
+def remove_task(list_of_tasks,task_index): #WHY ask for task_index in function if input after that is a msitake corrected in v2 of the function here under.
     try:
         task_index = int(input("Which task would you like to remove? "))
         if not list_of_tasks:
