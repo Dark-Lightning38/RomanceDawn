@@ -39,11 +39,14 @@ def get_weather_in_city_hours():
             response = requests.get(url, verify=False, timeout = 10)
             datafunct = response.json()
         except requests.exceptions.Timeout:
-            print("Timeout error occurred while fetching weather data.")    
+            print("Timeout error occurred while fetching weather data.")   
+            return 
         except requests.exceptions.ConnectionError:
             print("Connection error occurred while fetching weather data.")
+            return
         except Exception as e:
             print(f"An unexpected error occurred: {e}") 
+            return
 
         cod = datafunct.get("cod", None)
         if str(cod)!= "200":
