@@ -1,4 +1,4 @@
-#KNOT_CHECK week 1
+#KNOT_CHECK week 1 & 2 - 2026-05-05
 
 #First breaking things:
 Nothing happened when I deleted the tasks file except loosing my tasks history. When I launched the script I went on menu 2 "Show Tasks" and it answered "No tasks yet in the list!". JSON create the file if it doesn't exist. I guess.
@@ -24,7 +24,30 @@ line 78 fixed my #WHY comment
 #wrap input calls
 ok so I do now understand the need ...and I've added it. I think it shoudl also be added to other scripts I have not just day1.py though.
 
-#learned
+#CLOSING 3 SENTENCES
 surprised about the if __name__ == "__main--": method and it makes sense. better... I didn't know about the import method back then. so it suprised em the improtance of it. and that I had amde a mistake in lines 70 to 74 of day2OPTIONC.py as I had really checked - so good all in all.
 learned the open ... as file fixing the file as variabel for Json very interesting. The if not list.Tuple,map & split method I had copied.
 not confident about....rememberign all of that... from scratch end of day 3 will be a lot. and return in function.
+
+#KNOT_CHECK week 3 - 2026-05-06
+
+#First reading of code
+I realized some stuff from yesterday like adding the "if __name__ == "__main__":"
+added an #WHY where i'd like your answer how does the response.json work without import json
+I see your point on the verify = False but CANNOT take the verify=False out as I am on a corporate network and it won't work otherwise
+
+
+#Breaking things & fix
+I entered "sdsfg" in city and the result was "sdsfg not found" and back to menu. ok that works then.
+I entered 999 as hours but got the except classic that is now in line 63 ane 64... so I commented it out and got the except exception from lines 84 and 85. Instead of Value error encoded in lines 59/60. Can you explain that ?? Is it because the the final Except takes precendenc on the except in the nested formula ?
+line 51 to 54 fixed for  cod 200 issue, makes sense actually now I understand that it would not have worked if no key present... makes sense.... hard ot remember that in future but ok.
+timeout added
+all except changes made..and it makes sense value error is wrong input for example, key error is when dealing with list/dict, and timeout error makes sense too so deos connection...exception as e ok it's other basically haha
+verify = False CANNOT take the verify=False out as I am on a corporate network and it won't work otherwise
+internet break undoable today.
+Good news = nothing crashes.
+
+#CLOSING 3 sentences
+Surprised about the python script using .json without import first
+learned more about try/except and learned more about error types. AND remembered I can do math within a list or key call liek [x//3] interesting.
+Not confident about Remembering all the syntax of all functions..... how do people do ??? we say Task manager from scratch for example but I need to remember all syntax by heart ?
