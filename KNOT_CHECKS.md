@@ -51,3 +51,8 @@ Good news = nothing crashes.
 Surprised about the python script using .json without import first
 learned more about try/except and learned more about error types. AND remembered I can do math within a list or key call liek [x//3] interesting.
 Not confident about Remembering all the syntax of all functions..... how do people do ??? we say Task manager from scratch for example but I need to remember all syntax by heart ?
+
+#Week 3: Post review fixes previous lines numbers no longer apply 
+Ok it makes sense to put the if name around the lyon block and no the key. Changed.
+Ok Index Error wouldn't be picked-up I get it now and fixed on lines 60/61
+data funct fixed by putting before the except Exception as e.

@@ -5,20 +5,17 @@ from dotenv import load_dotenv
 
 ############## KEY Protection ##################
 
-if __name__ == "__main__":
-    load_dotenv()
-    API_KEY = os.getenv("OPENWEATHER_API_KEY")
+
+load_dotenv()
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 
 ############ start #####################
-
-city = "Lyon"
-
-url = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}"
-response = requests.get(url, verify=False, timeout = 10)
-data = response.json() #WHY how does .json work without importing json module ?
-
 if __name__ == "__main__":
+    city = "Lyon"
+    url = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}"
+    response = requests.get(url, verify=False, timeout = 10)
+    data = response.json() #WHY how does .json work without importing json module ?
     print(data)
 
 # temperature = data['list'][0]['main']['temp']-273.15
@@ -45,8 +42,8 @@ def get_weather_in_city_hours():
             print("Timeout error occurred while fetching weather data.")    
         except requests.exceptions.ConnectionError:
             print("Connection error occurred while fetching weather data.")
-        except:
-            print("API Error occurred while fetching weather data.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}") 
 
         cod = datafunct.get("cod", None)
         if str(cod)!= "200":
@@ -60,6 +57,8 @@ def get_weather_in_city_hours():
         print("Invalid input. Please enter a valid number of hours (0 to 24).")
     except KeyError:
         print("Data not available for the specified city or hours.")
+    except IndexError:
+        print("Hours out of range.120 hours or 5 days are available.")
     # except:
     #     print("An error occurred in getting weather data. Please try again.")
 
