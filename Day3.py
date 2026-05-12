@@ -32,6 +32,9 @@ def get_weather_in_city_hours():
     try:
         city_funct = input("Enter the city name: ")
         hours = int(input("Enter the number of hours: "))
+        if hours < 0:
+            print("Cannot input a negative number to get weather in the past")
+            return
 
         url = f"https://api.openweathermap.org/data/2.5/forecast?q={city_funct}&appid={API_KEY}"
         
@@ -39,7 +42,7 @@ def get_weather_in_city_hours():
             response = requests.get(url, verify=False, timeout = 10)
             datafunct = response.json()
         except requests.exceptions.Timeout:
-            print("Timeout error occurred while fetching weather data.")   
+            print("Timeout error occurred while fetching weather data.")
             return 
         except requests.exceptions.ConnectionError:
             print("Connection error occurred while fetching weather data.")

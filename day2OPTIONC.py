@@ -11,7 +11,8 @@ def load_tasks():
             print("No existing tasks file found.")
     except json.JSONDecodeError:
         print("Error decoding JSON file.")
-    except:
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
         return[] #WHY vs except ValueError? or other error types?
 
 def save_tasks(tasks):
@@ -105,6 +106,8 @@ def remove_task2(list_of_tasks):
                 print(f"Task {index+1}: {task['name']}")
     except ValueError:
         print("Invalid input. Please enter a number.")
+    except IndexError:
+        print("Task number out of range. Please enter a valid task number.")    
 
 
 def mark_done(lists_of_tasks):
@@ -121,8 +124,8 @@ def mark_done(lists_of_tasks):
         print(f"Task number {task_index} - {lists_of_tasks[task_index-1]['name']} marked as done")
     except ValueError:
         print("Invalid input. Please enter a number.")
-    except:
-        print("An error occurred while marking the task as done.")
+    except Exception as e:
+        print(f"An error occurred while marking the task as done: {e}.")
 
 def menu():
     print("1. Add Task")

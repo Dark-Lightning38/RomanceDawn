@@ -56,3 +56,31 @@ Not confident about Remembering all the syntax of all functions..... how do peop
 Ok it makes sense to put the if name around the lyon block and no the key. Changed.
 Ok Index Error wouldn't be picked-up I get it now and fixed on lines 60/61
 data funct fixed by putting before the except Exception as e.
+
+#KNOT_CHECK week 4 - 2026-05-12
+
+#Five tests I think about
+1//day1 input empty for name in self_add_agent3
+2//day1 input number without coma for hours worked in self_add_agent3
+3//day2OPTIONC liens 141 to &55 what if we have a json error ? or in the 17 to 19 but what about if the file doesn't exist when teh save_tasks is happenign post launch of the script
+4//Day3 enter a + as a city name
+5//Day3 enter -3 in hours hehe
+
+#so test results and fixes
+1//Ok empty name worked....that is not good  
+2// 45 saved it as (45,)
+3//I deleted the task file after having launched the menu; then add task, then..................IT CAME BACK !! the file and previous task ??? how does that work ???
+4// just + not found... it was a bad test... teh real test is inputting 120 and it tells me it's out of range...index error planned. shoudl I ahve fixed with a-1 in the code ??? maybe not..
+5//HAHAHAHAHHA -3 actually gave me an answer for Lyon but went backward hahahaha ok, I should probably fix that too
+
+1// fixed
+2//I mean I could use the method I used for the worked days but same issue really.....so for the moemnt I think I'll leave it like this as I do not know a method to avoid this.
+3// nothing to do hehehe
+4// same nothing to fix in the end
+5// At first I was thinking to use abs() but that is just forcing something that makes no sense so elt's fix with an if function.
+
+#All bare except: have been removed.
+
+#Added Index error to remove_trask2 as there is already an If condition above but asked for gating.
+
+#READ ME v1 done

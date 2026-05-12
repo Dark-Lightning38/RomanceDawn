@@ -141,7 +141,11 @@ def self_add_agent3():
     try:
 #        new_self_add_agent = {} #WHY did I create this ? to add into a dic and then add this into list ... instead I did ti manually on line 148
         name_input = str(input("Hello, Please start by giving me your name: "))
-        print(f"Hello {name_input}, thank you for joining us!")
+        if len(name_input) < 2:
+            print("Invalid input for Name, must be at least 2 characters long")
+            return
+        else:
+            print(f"Hello {name_input}, thank you for joining us!")
         FTE_input = float(input("Please enter your FTE: "))
         days_worked_input = list(input("Please enter the days you worked (monday being 0 and sunday 6 - no space or comma): "))
         hours_worked_input = tuple(map(int, input("Please enter the range of hours you work each day (e.g., 8,18): ").split(",")))
