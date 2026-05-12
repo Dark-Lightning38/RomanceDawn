@@ -84,3 +84,5 @@ data funct fixed by putting before the except Exception as e.
 #Added Index error to remove_trask2 as there is already an If condition above but asked for gating.
 
 #READ ME v1 done
+
+#VENV test passed and requirements.txt file updated
