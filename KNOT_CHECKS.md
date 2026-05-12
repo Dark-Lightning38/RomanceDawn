@@ -86,3 +86,13 @@ data funct fixed by putting before the except Exception as e.
 #READ ME v1 done
 
 #VENV test passed and requirements.txt file updated
+
+#today learning, surprised and not confident about
+today I was surprised by how much after a week of vacation I still remembered the github command line
+I learned about venv hehe
+I am not confident about my remembering of certain formulas like the json ones..
+
+#Now the big question at end of Phase 1
+Yes I can do it.
+Would I remember everyt construction or every trick no... but can I build it again and this time make it clean with no issues and explain every line and construction to a stranger.
+I think in terms of gaps I would remember exactly how to write a load file or save and would need to refer to my notes or how to load the env file without looking at the formula os.etc. but otherwise I feel ok with everyhting else.
