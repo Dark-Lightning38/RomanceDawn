@@ -128,3 +128,21 @@ The pnl data is uploaded too.
 I learned about the widgets and layout of streamlit, how to call it in the command line as well as the reun and cahcing
 I' surprised about the ease of streamlit..
 Not confident about the caching 100%, it will come
+
+
+#KNOT_CHECK week5_day2 - 2026-05-15
+
+#DEBUG
+so for the Debug the code is now including a warnign if you pick the same period or same version inthe comps. Which makes sense we don't want to block it but I do want to warn about it.
+The selctbox takes data from the CSV file so...yes it behaves... but then... kinda kills the work no ?
+
+PS I played a bit in terms of UX.. text, etc. 
+
+#PREP WORK TOMORROW
+For tomorrow I need the following in th ecomaprison table: for starter I think all top line items no ?? but the variance in hard and in % between years and versions would be good...
+I have to admit I'd like to have the data line item per type.... topline/revenue... the internal cost then sub levels.... I think it's a bit everythg at the same level for the moment....
+
+#3 sentences
+I learned about the sidebar nesting a clumn in hehehe and the sorted and .unique function...
+I was surprised bout the label technic
+I'm still not confident about the "df" CAN you help Claude please ?

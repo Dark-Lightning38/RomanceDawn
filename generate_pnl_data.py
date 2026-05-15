@@ -50,7 +50,7 @@ LINES = [
 VERSIONS  = ["Budget", "Forecast1", "Forecast2", "Actuals"]
 PERIODS   = ["Jan", "Feb", "Mar", "Q1", "Apr", "May", "Jun",
              "Q2", "H1", "Q3", "Q4", "FY"]
-LOBS      = ["Motor", "Travel", "Home", "CHC"]
+LOBS      = ["Motor", "Travel", "Home", "Other"]
 YEARS = list(range(2024,2031))
 
 # ── BASE VALUES PER LINE (realistic anchors) ────────────
@@ -70,7 +70,7 @@ BASE = {
     "CHC ratio": 13.0, "NCE ratio": 8.0, "CoR CY": 83.0, "CoR AY": 83.0,
     "Full loaded COR CY": 90.0, "Total ECR": 95.0, }
 
-LOB_SCALE = {"Motor": 1.0, "Travel": 0.35, "Home": 0.25, "CHC": 0.18}
+LOB_SCALE = {"Motor": 1.0, "Travel": 0.35, "Home": 0.25, "Other": 0.18}
 
 VERSION_DRIFT = {"Budget": 0.0, "Forecast1": 0.03, "Forecast2": 0.05, "Actuals": 0.07}
 
