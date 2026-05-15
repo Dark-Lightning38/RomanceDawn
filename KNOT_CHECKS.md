@@ -120,3 +120,11 @@ Interesting though the load function I din't make it work well I think as it sta
 
 #What is Rerun
 Rerun is the fact that after every interaction with the page or that's great any change saved in the script the entiere script reruns. It also explains why caching is so important in that model - aka avoiding laoding data all the time.
+
+#fixed post commit to claude the import issue, the caching in module and the print in caching function.
+The pnl data is uploaded too.
+
+#The 3 sentences of day1
+I learned about the widgets and layout of streamlit, how to call it in the command line as well as the reun and cahcing
+I' surprised about the ease of streamlit..
+Not confident about the caching 100%, it will come

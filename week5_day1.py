@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from datetime import time
+from datetime import time as dt_time
 import time
 from io import StringIO
 
@@ -12,6 +12,29 @@ st.set_page_config(page_title="GPM Financial Analysis", layout="wide")
 st.title("GPM Financial Analysis")
 st.write("This is a simple app for financial analysis. please refer to the guidebook if you have any questions.")
 
+@st.cache_data
+def long_running_task():
+    time.sleep(5) # Simulate a long-running task
+    st.success("Task completed!")
+    print("Loading...")
+    st.write("Loading completed!")
+
+@st.cache_data
+def long_running_task():
+    time.sleep(5) # Simulate a long-running task
+    return "done"   
+
+@st.cache_data  # 👈 Add the caching decorator
+def load_data2(url):
+    df = pd.read_csv(url)
+    return df
+
+@st.cache_data
+def load_data():
+    # Simulate a slow data loading operation
+    time.sleep(1)
+    return pd.DataFrame(np.random.randn(10, 20), columns=[f'col {i}' for i in range(20)])
+
 def PeriodComp():
     
     with st.sidebar:
@@ -19,11 +42,7 @@ def PeriodComp():
    
     st.divider()
 
-    @st.cache_data
-    def load_data():
-        # Simulate a slow data loading operation
-        time.sleep(1)
-        return pd.DataFrame(np.random.randn(10, 20), columns=[f'col {i}' for i in range(20)])
+
 
     df = load_data()
 
@@ -99,7 +118,7 @@ def VersionComp():
 
     st.divider()
     appointment = st.slider(
-        "Schedule your appointment:", value=(time(11, 30), time(12, 45))
+        "Schedule your appointment:", value=(dt_time(11, 30), dt_time(12, 45))
     )
     st.write("You're scheduled for:", appointment)
 
@@ -132,26 +151,16 @@ def widgettest():
     
     st.title("Loading Example with Spinner")
 
-    @st.cache_data  # 👈 Add the caching decorator
-    def load_data(url):
-        df = pd.read_csv(url)
-        return df
 
-    df = load_data("https://github.com/plotly/datasets/raw/master/uber-rides-data1.csv")
+    df = load_data2("https://github.com/plotly/datasets/raw/master/uber-rides-data1.csv")
     st.dataframe(df)
 
     st.button("Rerun")
-
-
- #   @st.cache_data
-    def long_running_task():
-        time.sleep(5) # Simulate a long-running task
-        st.success("Task completed!")
-        print("Loading...")
-        st.write("Loading completed!")
     
-    long_running_task()
-    
+    result = long_running_task()
+    if result == "done":
+        st.success("TERMiné MF ! ")
+
  #   @st.cache_data    
     def load_uploaded_file(uploaded_file):
         return pd.read_csv(uploaded_file)

@@ -49,8 +49,9 @@ LINES = [
 
 VERSIONS  = ["Budget", "Forecast1", "Forecast2", "Actuals"]
 PERIODS   = ["Jan", "Feb", "Mar", "Q1", "Apr", "May", "Jun",
-             "Q2", "H1", "Q3", "Q4", "2026FY"]
+             "Q2", "H1", "Q3", "Q4", "FY"]
 LOBS      = ["Motor", "Travel", "Home", "CHC"]
+YEARS = list(range(2024,2031))
 
 # ── BASE VALUES PER LINE (realistic anchors) ────────────
 BASE = {
@@ -76,34 +77,38 @@ VERSION_DRIFT = {"Budget": 0.0, "Forecast1": 0.03, "Forecast2": 0.05, "Actuals":
 PERIOD_SCALE  = {
     "Jan":0.08,"Feb":0.08,"Mar":0.09,"Q1":0.25,
     "Apr":0.08,"May":0.08,"Jun":0.09,"Q2":0.25,
-    "H1":0.50,"Q3":0.25,"Q4":0.25,"2026FY":1.0
+    "H1":0.50,"Q3":0.25,"Q4":0.25,"FY":1.0
 }
 
 rows = []
 for line, section, is_ratio, sort_order, is_subtotal in LINES:
     base = BASE.get(line, 0.0)
-    for version in VERSIONS:
-        for period in PERIODS:
-            for lob in LOBS:
-                drift  = np.random.normal(VERSION_DRIFT[version], 0.02)
-                scale  = LOB_SCALE[lob] * PERIOD_SCALE[period]
-                if is_ratio:
-                    val = round(base * (1 + drift) + np.random.normal(0, 0.5), 1)
-                else:
-                    val = round(base * scale * (1 + drift), 2)
-                rows.append({
-                    "line_item":    line,
-                    "section":      section,
-                    "is_ratio":     is_ratio,
-                    "sort_order":   sort_order,
-                    "is_subtotal":  is_subtotal,
-                    "version":      version,
-                    "period":       period,
-                    "lob":          lob,
-                    "value":        val,
-                })
+    for year in YEARS:
+        for version in VERSIONS:
+            for period in PERIODS:
+                for lob in LOBS:
+                    drift  = np.random.normal(VERSION_DRIFT[version], 0.02)
+                    scale  = LOB_SCALE[lob] * PERIOD_SCALE[period]
+                    if is_ratio:
+                        val = round(base * (1 + drift) + np.random.normal(0, 0.5), 1)
+                    else:
+                        val = round(base * scale * (1 + drift), 2)
+                    rows.append({
+                        "line_item":    line,
+                        "section":      section,
+                        "is_ratio":     is_ratio,
+                        "sort_order":   sort_order,
+                        "is_subtotal":  is_subtotal,
+                        "year":         year,
+                        "version":      version,
+                        "period":       period,
+                        "lob":          lob,
+                        "value":        val,
+                    })
 
 df = pd.DataFrame(rows)
 df.to_csv("axa_pnl_long.csv", index=False)
 print(f"Done — {len(df)} rows written to axa_pnl_long.csv")
+print(f"Years in data: {sorted(df['year'].unique())}")
+print(f"Periods in data: {sorted(df['period'].unique())}")
 print(df.head(10))
