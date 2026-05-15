@@ -15,6 +15,7 @@ def load_tasks():
         print(f"An unexpected error occurred: {e}")
         return[] #WHY vs except ValueError? or other error types?
 
+
 def save_tasks(tasks):
     with open("tasks.json", "w") as file: #WHY as file ?
         json.dump(tasks, file)

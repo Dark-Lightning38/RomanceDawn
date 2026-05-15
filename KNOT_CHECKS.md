@@ -96,3 +96,27 @@ I am not confident about my remembering of certain formulas like the json ones..
 Yes I can do it.
 Would I remember everyt construction or every trick no... but can I build it again and this time make it clean with no issues and explain every line and construction to a stranger.
 I think in terms of gaps I would remember exactly how to write a load file or save and would need to refer to my notes or how to load the env file without looking at the formula os.etc. but otherwise I feel ok with everyhting else.
+
+
+#KNOT_CHECK week5_day1 - 2026-05-12
+
+#THEORY
+I read the Streamlit documentation on the website and the streamlit hello, very good to be fair
+I'm not sure if any interaction rerunning the whole script is good or not yet.. I think it is for certain things like for example when trying to get answers and filtering, playing with data.. a bit like PBI. I see the value of having this but I do'nt know how I'll use it yet.Of course, I udnerstand not to have to load CSV everytime hehe
+the cache is very ineteresting
+I experimented a lot with the various documentation and caching.
+
+#Build
+so generte_pnl_data.py has been ran
+the widget_test is within the week5_day1.py and I tried everything... including other things that were in teh stramlit documentation
+I saw the rerun in action
+All widgets, columns, etc. very cool... I even found a documentation part on making pages without having to make pages like several scripts that was fun you'll see.
+
+
+#ISSUE: the Pnl data doesn't have years.... it has eprdiods but we don't know if we are comparing 2025 to 2026.
+
+#Experimented a lot hehe you'll see in the code
+Interesting though the load function I din't make it work well I think as it stayed in final "terminated" state even after I emptied the cache and rerun button.
+
+#What is Rerun
+Rerun is the fact that after every interaction with the page or that's great any change saved in the script the entiere script reruns. It also explains why caching is so important in that model - aka avoiding laoding data all the time.
