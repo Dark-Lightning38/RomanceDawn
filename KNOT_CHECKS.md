@@ -86,6 +86,11 @@ data funct fixed by putting before the except Exception as e.
 #READ ME v1 done
 
 #VENV test passed and requirements.txt file updated
+1.pipreqs . or pipreqs . --force
+2.check file
+3.python -m venv venv (only if new to create venv)
+4.venv\Scripts\activate
+5.run as usually ?
 
 #today learning, surprised and not confident about
 today I was surprised by how much after a week of vacation I still remembered the github command line

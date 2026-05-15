@@ -1,5 +1,6 @@
+numpy==1.24.3
 pandas==2.0.3
 plotly==6.5.0
 python-dotenv==1.2.2
-requests==2.34.0
+requests==2.34.2
 streamlit==1.56.0
