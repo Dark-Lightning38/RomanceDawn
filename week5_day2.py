@@ -15,8 +15,10 @@ def load_data(url):
     df = pd.read_csv(url)
     return df
 
-df = load_data("axa_pnl_long.csv")
+def load_uploaded_file(uploaded_file):
+    return pd.read_csv(uploaded_file)
 
+df = load_data("axa_pnl_long.csv")
 
 
 
@@ -27,8 +29,6 @@ with st.sidebar:
 
     st.divider()
 
-    def load_uploaded_file(uploaded_file):
-        return pd.read_csv(uploaded_file)
 
     st.header("➕ Upload Data")
     uploaded_file = st.file_uploader("Upload a CSV file", type="csv")
@@ -48,7 +48,7 @@ with st.sidebar:
         with col2:
             version_b = st.selectbox("Version B", sorted(df["version"].unique()))
             year_b = st.selectbox("Year B", sorted(df["year"].unique()), index=1)
-        lob = st.sidebar.selectbox("LoB",sorted(df["lob"].unique()))
+        lob = st.selectbox("LoB",sorted(df["lob"].unique()))
         label_a, label_b, label_c, label_d, label_e = version_a, version_b, period, year_a, year_b
         if version_a == version_b:
             st.warning("Please select different versions for comparison.")
@@ -57,7 +57,7 @@ with st.sidebar:
         year = st.slider('Please select the year or years you wish to inspect',2024,2030,(2025,2026))
         period_a = st.selectbox("Period A", sorted(df["period"].unique()))
         period_b = st.selectbox("Period B", sorted(df["period"].unique()))
-        lob = st.sidebar.selectbox("LoB",sorted(df["lob"].unique()))
+        lob = st.selectbox("LoB",sorted(df["lob"].unique()))
         label_a, label_b, label_c, label_d = period_a, period_b, version, year
         if period_a == period_b:
             st.warning("Please select different periods for comparison.")

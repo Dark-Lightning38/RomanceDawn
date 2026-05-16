@@ -147,7 +147,28 @@ PS I played a bit in terms of UX.. text, etc.
 For tomorrow I need the following in th ecomaprison table: for starter I think all top line items no ?? but the variance in hard and in % between years and versions would be good...
 I have to admit I'd like to have the data line item per type.... topline/revenue... the internal cost then sub levels.... I think it's a bit everythg at the same level for the moment....
 
+#FIXED psot gate request
+I fixed the function in module and the year selector and sidebar in sidebar module hehe
+
 #3 sentences
 I learned about the sidebar nesting a clumn in hehehe and the sorted and .unique function...
 I was surprised bout the label technic
 I'm still not confident about the "df" CAN you help Claude please ?
+
+#KNOT_CHECK week5_day3 - 2026-05-16
+
+OK so I reused a lot of the code that was on the conversation with Claude... Ic oudl'nt write everything from scratch as the slcie function was really hard and the display one too. CAN you please make me a step by step of the "##### FILTER FUNCTION / COMP TABLE #####"
+
+I did experiment a bit in general and found a way to make the metrics work though on my own hehehe
+
+#DEBUG
+Yup did all of it and all worked perfectly.... I did use the one you put int he chat but with modifications 
+
+NOW if sort_order was to break... I guess first GWP may not apepar first which would break my current keys for the st.metric...
+What else ? am I missing something ?
+
+
+#3 sentences
+I learned about the st.metric quite well
+I am surprised that we move the values to strings... in the is it a ratio ? You know because it makes every calculus after more complicated like the Var% for the ratio ?? why return a string ? And Color variance function doesn't seem to be used either ??
+I am still not confident about the lines 65 to 90....
