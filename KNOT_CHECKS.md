@@ -162,7 +162,10 @@ OK so I reused a lot of the code that was on the conversation with Claude... Ic 
 I did experiment a bit in general and found a way to make the metrics work though on my own hehehe
 
 #DEBUG
-Yup did all of it and all worked perfectly.... I did use the one you put int he chat but with modifications 
+Yup did all of it and all worked perfectly.... I did use the one you put in the chat but with modifications 
+
+PS all the GWP, CHC,and ECR numbers match for versions and years I checked for Forecast1, budget and for 2025 and 2026.
+so... good....
 
 NOW if sort_order was to break... I guess first GWP may not apepar first which would break my current keys for the st.metric...
 What else ? am I missing something ?
@@ -172,3 +175,33 @@ What else ? am I missing something ?
 I learned about the st.metric quite well
 I am surprised that we move the values to strings... in the is it a ratio ? You know because it makes every calculus after more complicated like the Var% for the ratio ?? why return a string ? And Color variance function doesn't seem to be used either ??
 I am still not confident about the lines 65 to 90....
+
+
+#KNOT_CHECK week5_day4 - 2026-05-19
+aaah finally back after my 3 days of intense business trip !! let's do day4
+
+so first I did all of it except the sidebar code, because I don't understand the need, not sure I want it nor quite get how I then change the whole code of the slicer and comp table ?
+
+now for the rest you'll see I did my best I think I used a lot of the help you give in the day-to-day and then experimented with different versions to actually learn...
+
+#DEBUG
+So for the GWP yes the positive variance seems to appear in green hehehe
+BUT for the cost lines... it is in greeen when in fact extra cost is not good... like the CHC or NCE...
+so TODO Week 7!!
+#TODO Week 7 jsut above...
+I used st.caption but more for kind of small instructions and for UX to be a bit better hehe
+If Var = 0 then nothing appears on the Var charts... logical.
+
+Now for the theory part I have read about the px and go.
+it is difficult to keep all of it in mind but good including the color mapping.
+
+
+
+#3 sentences
+I learned how to make graphs!! and better understood the :+ in the {} for variables for the comp table too!
+I am surprised about the " combined2 = combined2[combined2["line_item"] != row]" that != means you can remove ?? incredible ... I'm also surprised we don't have a lot of try/Except in this code...
+I am not confident about 4 things: 
+1 "for row in combined2["line_item"].unique():" I do not understand the .unique here....
+2 "subset=["Var%"]"  I cannot do it for 2 columns with a & ...I tried..
+3 why convert in strings the values at all ?? why not leave them as int or float to put in the table ?
+4 fig.update_layout(xaxis_tickangle=-45,showlegend=True)
